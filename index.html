@@ -19,11 +19,11 @@
 <button type="submit" class="btn btn-info" onclick="getblynk_lock_off()">OFF</button>
 </div>
 
-<!--Lamp buttons at V1 -->
+<!--LED buttons at V1 -->
 <div class="container">
-  <h1>Button for LAMP</h1>
-  <button type="submit" class="btn btn-info" onclick="getblynk_lamp_on()">ON</button>
-<button type="submit" class="btn btn-info" onclick="getblynk_lamp_off()">OFF</button>
+  <h1>Button for LED</h1>
+  <button type="submit" class="btn btn-info" onclick="getblynk_LED_on()">ON</button>
+<button type="submit" class="btn btn-info" onclick="getblynk_LED_off()">OFF</button>
 </div>
 
 <!--Buzzer buttons at V2 -->
@@ -31,6 +31,13 @@
   <h1>Button for BUZZER</h1>
   <button type="submit" class="btn btn-info" onclick="getblynk_buzzer_on()">ON</button>
 <button type="submit" class="btn btn-info" onclick="getblynk_buzzer_off()">OFF</button>
+</div>
+
+<!--LAMP buttons at V3 -->
+<div class="container">
+  <h1>Button for LAMP</h1>
+  <button type="submit" class="btn btn-info" onclick="getblynk_lamp_on()">ON</button>
+<button type="submit" class="btn btn-info" onclick="getblynk_lamp_off()">OFF</button>
 </div>
 
 
@@ -52,7 +59,7 @@
 <!--Scripts for door lock at V0-->
 
 
-<!--Scripts for lamp buttons at V1-->
+<!--Scripts for lamp buttons at V3-->
 <script>
   function getblynk_lamp_on(){
   $.get("https://sgp1.blynk.cloud/external/api/update?token=1YGtqWfngp8iGxW3LJ1EJOj1FeV3gnqX&v0=1", (data, status) => {
@@ -68,8 +75,6 @@
   }
 </script>
 <!--Scripts for lamp buttons at V1-->
-
-
 
 
 <!--Scripts for buzzer at V2-->
@@ -89,6 +94,22 @@
 </script>
 <!--Scripts for buzzer at V2-->
 
+<!--Scripts for LED at V1-->
+<script>
+  function getblynk_LED_on(){
+  $.get("https://sgp1.blynk.cloud/external/api/update?token=1YGtqWfngp8iGxW3LJ1EJOj1FeV3gnqX&v1=1", (data, status) => {
+    console.log(data);
+  });
+  }
+</script>
+<script>
+  function getblynk_LED_off(){
+  $.get("https://sgp1.blynk.cloud/external/api/update?token=1YGtqWfngp8iGxW3LJ1EJOj1FeV3gnqX&v1=0", (data, status) => {
+    console.log(data);
+  });
+  }
+</script>
+<!--Scripts for buzzer at V3-->
 
 
 
